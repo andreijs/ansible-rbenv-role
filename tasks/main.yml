@@ -135,7 +135,7 @@
     - rbenv
 
 - name: install ruby {{ rbenv.ruby_version }}
-  shell: bash -lc "rbenv install {{ rbenv.ruby_version }}"
+  shell: bash -lc "TMPDIR=~/tmp rbenv install {{ rbenv.ruby_version }}"
   when: ruby_installed.rc != 0
   tags:
     - rbenv
